@@ -34,7 +34,7 @@ class Omnireddit(commands.AutoShardedBot):
 
     async def on_command_error(self, ctx : commands.Context, exception):
         if isinstance(exception, commands.CommandNotFound):
-            return #await ctx.send("`Command not found`", delete_after=3)
+            return await ctx.send("`Command not found`", delete_after=3)
         if isinstance(exception, commands.NoPrivateMessage):
             return await ctx.send("This command can't be used in a private chat.", delete_after=7)
         if isinstance(exception, commands.CommandOnCooldown):
